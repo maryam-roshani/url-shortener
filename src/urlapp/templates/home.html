@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <title>Url Shortener</title>
+</head>
+<body>
+
+<main>
+  <h1>URL Shortener</h1>
+  <input type="text" id="input" placeholder="Enter URL here">
+  <div class="buttons">
+    <button id="expand">Expand</button>
+    <button id="shorten">Shorten</button>
+  </div>
+  <section id="section"></section>
+</main>
+
+{% block content %}
+{% endblock %}
+
+    <script src="{% static 'js/script.js' %}"></script>!
+</body>
+</html>
