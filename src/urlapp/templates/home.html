@@ -13,17 +13,31 @@
 
 <main>
   <h1>URL Shortener</h1>
-  <input type="text" id="input" placeholder="Enter URL here">
-  <div class="buttons">
-    <button id="expand">Expand</button>
-    <button id="shorten">Shorten</button>
-  </div>
-  <section id="section"></section>
+  <form method="post" class="form" action="{% url 'urlapp:create' %}">
+    {% csrf_token %}
+    <input type="text" id="input" name="expand" placeholder="Enter URL here">
+    <div class="buttons">
+      <button id="shorten">Shorten</button>
+    </div>
+    <div>
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+         <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    <div class="container">
+      {% if url %}
+        <section class="sec2" name="section1" id="section1">{{url.link}}</section>
+        <section class="sec2" name="section2" id="section2">http://localhost:8000/{{url.link_id}}</section>
+      {% else %}
+        <section class="sec2" name="section1" id="section1"></section>
+        <section class="sec2" name="section2" id="section2"></section>
+      {% endif %}
+  </form>
 </main>
-
-{% block content %}
-{% endblock %}
-
     <script src="{% static 'js/script.js' %}"></script>!
 </body>
 </html>

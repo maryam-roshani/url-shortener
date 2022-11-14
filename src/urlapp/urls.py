@@ -6,4 +6,6 @@ app_name = 'urlapp'
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('create', views.add, name='create'),
+    path('<str:pk>', views.shorten, name='shorten'),
 ]

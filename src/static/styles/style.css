@@ -4,12 +4,26 @@
   box-sizing: border-box;
 }
 
-body,
-section {
+body {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+section.sec2 {
+  border: 1px solid #330867;
+  display: flex;
+  flex: 1;
+  background-color: white;
+  padding: 5px;
+}
+.sec3 {
+  flex: 1;
 }
 
 body {
@@ -63,7 +77,7 @@ button {
 }
 
 section {
-  min-height: 120px;
+  min-height: 150px;
   text-align: center;
   background-color: white;
 }
